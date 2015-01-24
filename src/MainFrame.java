@@ -21,7 +21,7 @@ public class MainFrame extends JFrame{
 	private final String strInPanel1[]={"7","8","9","+","4","5","6","-","1","2","3","*",
 			"(","0",")","/"};
 	private final String strInPanel2[]={"Clear","Back"};
-	private final String strInPanel3[]={"sin","cos","tan","����","pow","lg"};
+	private final String strInPanel3[]={"sin","cos","tan","开方","pow","lg"};
 	JButton buttonInPanel1[]=new JButton[strInPanel1.length];
 	JButton buttonInPanel2[]=new JButton[strInPanel2.length]; 
 	JButton buttonInPanel3[]=new JButton[strInPanel3.length]; 
@@ -182,7 +182,7 @@ public class MainFrame extends JFrame{
 	         case "sin":
 	         case "cos":
 	         case "tan":
-	         case "����":
+	         case "开方":
 	         case "lg":
 	        	 if(!s.empty()&&s.peek()!="+"&&s.peek()!="-"&&s.peek()!="*"&&s.peek()!="/"&&s.peek()!="("){
 	        		 newExp.add(s.pop());
@@ -196,7 +196,7 @@ public class MainFrame extends JFrame{
                  while((i<oldExp.size())&&((oldExp.elementAt(i).toCharArray()[0]<='9'&&
                 		 	oldExp.elementAt(i).toCharArray()[0]>='0')||
                 		oldExp.elementAt(i).toCharArray()[0]=='.'||
-                		oldExp.elementAt(i).toCharArray()[0]=='��')){
+                		oldExp.elementAt(i).toCharArray()[0]=='#')){
                 	 newExp.add(oldExp.elementAt(i));
                 	 i++;
                   }
@@ -261,7 +261,7 @@ public class MainFrame extends JFrame{
                 		c=Math.tan(a);
                 		s.push(c);
                 		break;
-	                case"����":
+	                case"开方":
                 		a=s.pop();
                 		c=Math.sqrt(a);
                 		s.push(c);
